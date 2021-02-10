@@ -7,6 +7,14 @@ module.exports = class HelpCommand extends BaseCommand {
   }
 
   run(client, message, args) {
-    message.channel.send('~help: Gives you this list.\n~meow: Gives you a meow\n~flip: Flips a coin.\n~say <arg>: says something');
+    var x = 
+    '~help: Gives you this list.\n' + 
+    '~meow: Gives you a meow\n' +
+    '~flip: Flips a coin.\n' +
+    '~say <arg>: says something\n' +
+    '~roll: Rolls a single die\n';
+
+
+    message.channel.send(x);
   }
 }
