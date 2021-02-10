@@ -25,7 +25,7 @@ module.exports = class RollCommand extends BaseCommand {
     }
 
     const sayEmbed = new Discord.MessageEmbed()
-      .setTitle(message.author.username + " has rolled a " + x)
+      .setTitle(message.author.username + " has rolled a " + x + "!")
       .setFooter(message.author.tag , message.author.displayAvatarURL())
       .setImage(dice1)
       .setColor(" #ECAD2A")
