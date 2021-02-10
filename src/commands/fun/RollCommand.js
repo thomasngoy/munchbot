@@ -9,6 +9,8 @@ module.exports = class RollCommand extends BaseCommand {
 
   run(client, message, args) {
     var x = Math.floor(Math.random()*6) + 1;
+    var y = Math.floor(Math.random()*6) + 1;
+    var z = x + y;
 
     var dice1 = "https://i.imgur.com/ZQzlpw6.gif";
     
@@ -27,10 +29,15 @@ module.exports = class RollCommand extends BaseCommand {
     const sayEmbed = new Discord.MessageEmbed()
       .setTitle(message.author.username + " has rolled a " + x + "!")
       .setFooter(message.author.tag , message.author.displayAvatarURL())
-      .setImage(dice1)
+      .setImage(dice1, dice1)
       .setColor(" #ECAD2A")
       .setTimestamp();
 
-    message.channel.send(sayEmbed);
+      try {
+        message.channel.send(sayEmbed);
+      } catch(err){
+        console.log(err);
+        message.channel.send('Something went wrong');
+      }
   }
 }
